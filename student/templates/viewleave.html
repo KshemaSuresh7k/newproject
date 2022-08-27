@@ -1,0 +1,101 @@
+
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="zxx">
+       <head>
+          <title>Lecturing a Education Category Bootstrap Responsive web Template| Home :: w3layouts</title>
+          <!--meta tags -->
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="keywords" content="Lecturing Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+             Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+          <script>
+             addEventListener("load", function () {
+                 setTimeout(hideURLbar, 0);
+             }, false);
+             
+             function hideURLbar() {
+                 window.scrollTo(0, 1);
+             }
+          </script>
+          <!--//meta tags ends here-->
+          <!--booststrap-->
+          <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+          <!--//booststrap end-->
+          <!-- font-awesome icons -->
+          <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+          <!-- //font-awesome icons -->
+          <!--stylesheets-->
+          <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' media="all">
+          <!--//stylesheets-->
+          <link href="//fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700" rel="stylesheet">
+          <link href="//fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+          <style>
+            table, th, td {
+                border: 2px solid rgb(234, 240, 241);
+                background-color: rgb(147, 139, 150);
+            }
+            th {
+          letter-spacing: 2px ;
+          padding-top: 10px;
+          padding-bottom: 20px;
+          padding-left: 30px;
+          padding-right: 40px;
+        }
+
+        td {
+         letter-spacing: 1px;
+         padding-top: 10px;
+         padding-bottom: 20px;
+         padding-left: 30px;
+         padding-right: 40px;
+        }
+
+        tbody td {
+          text-align: center;
+        }
+            </style>
+       </head>
+        <body>
+            <div class="main-top" id="home">
+                <!-- header -->
+                <div class="headder-top"><br><br>
+                    <h3>List of Leaves</h3><br>
+            <form action="" method="POST">
+              {% csrf_token %}
+        <table>
+            <tr>
+                <th>List No.</th>
+                <th>Student Name</th>
+                <th>Adm No.</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>No. of Days</th>
+                <th>Reason</th>
+                <th>Approve</th>
+                <th>Reject</th>
+
+               
+            </tr>
+            {% for i in cr %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.admno }}</td>
+                <td>{{i.department}}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.days }}</td>
+                <td>{{ i.reason }}</td>
+                <td><a href="{% url 'approvleave' i.id %}" class="btn btn-success" role="button" aria-pressed="true">Approve</a></td>
+                
+                <td><a href="{% url 'delete' i.id %}" class="btn btn-danger" role="button" aria-pressed="true">Reject</a></td>
+    
+                
+            </tr>
+            {% endfor %}
+        </table>
+</form>
+                </div>
+            </div>
+        </body>
+    </html>

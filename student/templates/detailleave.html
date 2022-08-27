@@ -1,0 +1,62 @@
+<Center>
+    <form action="/detailleave/" method="POST" ><h3>
+        {% csrf_token %}
+    
+        <div class="row">
+            <div class="col-10">
+                <label><b><font color="#800000"> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;Choose Student Admission Number </font></b></label>
+            </div>
+           
+        </div>
+        
+        <br>
+
+       
+        </h3>
+        <input type="number" id="admno" name="admno">
+         <input type="submit" value="submit" >
+       
+    
+        </form>
+
+   </Center>
+   <center>
+           
+    <table border="2" class="table">
+       
+    <tr>
+        <th>student name</th>
+        
+        <th></th>
+       
+        <th>date</th>
+        <th></th>
+       
+        <th>day</th>
+        <th></th>
+       
+        <th>reason</th>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    </tr>   {% for i in ce %}
+        <tr>
+            <td>{{i.name}}</td>
+       <td></td>
+            <td>{{i.date}}</td>
+            <td></td>
+        <td>{{i.days}}</td>
+            <td></td>
+        <td>{{i.reason}}</td>
+            <td></td>  
+
+               
+            
+        </tr>
+      
+        {% endfor %}
+     
+      </table>
+    
+    </center>
+
+
+

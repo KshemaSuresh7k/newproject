@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+   <head>
+      <title>Lecturing a Education Category Bootstrap Responsive web Template| Home :: w3layouts</title>
+      <!--meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Lecturing Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+      <!-- //font-awesome icons -->
+      <!--stylesheets-->
+      <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' media="all">
+      <!--//stylesheets-->
+      <link href="//fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+
+       
+      <style>
+         *{box-sizing: border-box;
+}
+input[type=text], input[type=email], input[type=number], input[type=select], input[type=date],input[type=select],input[type=password], input[type=tel]
+{
+ width: 45%;
+ padding: 12px;
+ border: 1px solid rgb(168, 166, 166);
+ border-radius: 4px;
+ resize: vertical;
+}
+textarea{
+ width:45%;
+ padding: 12px;
+ border: 1px solid rgb(168, 166, 166);
+ border-radius: 4px;
+ resize: vertical;
+}
+input[type=radio],input[type=checkbox]{
+ width: 1%;
+ padding-left: 0%;
+ border: 1px solid rgb(168, 166, 166);
+ border-radius: 4px;
+ resize: vertical;
+}
+h1{
+ font-family: Arial;
+ font-size: medium;
+ font-style: normal;
+ font-weight: bold;
+ color: brown;
+ text-align: center;
+ text-decoration: underline;
+}
+label{
+ padding: 12px 12px 12px 0;
+ display: inline-block;
+}
+input[type=submit] {
+ background-color: #bb21cf;
+ color: white;
+ padding: 12px 20px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ float:left;
+}
+input[type=submit]:hover {
+background-color: #49dbe6;
+}
+.container{
+ border-radius: 5px;
+ background-color:#ece9e9;
+ padding: 20px;
+}
+.col-10{
+ float: left;
+ color: #f8f8e4;
+ width:10%;
+ margin-top: 6px;
+}
+.col-90{
+ float: left;
+ width: 90%;
+ margin-top: 6px;
+}
+.row:after{
+ content: "";
+ display: table;
+ clear: both;
+}
+@media screen and (max-width: 600px) {
+ .col-10,.col-90,input[type=submit]{
+     width: 100%;
+     margin-top: 0;
+ }
+}
+     </style>
+     <meta charset="UTF-8">
+    
+     <link rel="stylesheet" href="{% static 'responsiveRegistration.css' %}">
+     <script type="text/javascript" lang="javascript" src="{% static 'responsiveRegistaration.js' %}"></script>
+
+   </head>
+   <body>
+      <div class="main-top" id="home">
+         <!-- header -->
+         <div class="headder-top">
+               <!-- nav -->
+               <nav >
+                  
+                  <label for="drop" class="toggle">Menu</label>
+                  <input type="checkbox" id="drop">
+                  <ul class="menu mt-2">
+                     <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                     <li>
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                        </label>
+                        <a href="#">Register <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2">
+                        <ul>
+                           <li><a href="{% url 'student' %}" class="drop-text">Student</a></li>
+                           <li><a href="{% url 'parentreg' %}" class="drop-text">parent</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <!-- Second Tier Drop Down -->
+                        <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                        </label>
+                        <a href="#">Login <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2">
+                        <ul>
+                           <li><a href="{% url 'studentlogin' %}" class="drop-text">Student</a></li>
+                           <li><a href="{% url 'parentlogin' %}" class="drop-text">parent</a></li>
+                        </ul>
+                     </li>
+                     
+                     
+                     <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="{% url 'teacherlogin' %}">Teacher</a></li>
+                  </ul>
+               </nav>
+               <!-- //nav -->
+            </div><br><br><br>
+         <!-- //header -->
+         <!-- banner -->
+         <div class="main-banner">
+            <h3>Teacher Login</h3><br><br>
+            <form method="POST" action="/teachlog/">
+                     {% csrf_token %}
+               <div class="row">
+                  <div class="col-10">&nbsp;&nbsp;
+                     <label for="email">Email:</label>
+                  </div>
+                  <div class="col-90">
+                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-10">&nbsp;&nbsp;
+                      <label for="password">Password :</label>
+                  </div>
+               <div class="col-90">
+                  <input type="password" id="password" name="password" maxlength="8" required>
+               </div>
+            </div><br><br>
+            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="submit" value="Login" >
+           </div> 
+         </form>
+
+         
+      </div>
+   </body>
+</html>
